@@ -51,7 +51,7 @@ async def json_or_text(response):
     return text
 
 class Route:
-    BASE = 'https://discord.com/api/v7'
+    BASE = 'https://discord.com/api/v9'
 
     def __init__(self, method, path, **parameters):
         self.path = path
@@ -962,7 +962,7 @@ class HTTPClient:
     def application_info(self):
         return self.request(Route('GET', '/oauth2/applications/@me'))
 
-    async def get_gateway(self, *, encoding='json', v=6, zlib=True):
+    async def get_gateway(self, *, encoding='json', v=9, zlib=True):
         try:
             data = await self.request(Route('GET', '/gateway'))
         except HTTPException as exc:
