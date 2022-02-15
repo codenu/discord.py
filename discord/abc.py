@@ -171,7 +171,7 @@ class _Overwrites:
         self.id = kwargs.pop('id')
         self.allow = int(kwargs.pop('allow_new', 0))
         self.deny = int(kwargs.pop('deny_new', 0))
-        self.type = sys.intern(kwargs.pop('type'))
+        self.type = sys.intern(str(kwargs.pop('type')))
 
     def _asdict(self):
         return {
